@@ -1,0 +1,38 @@
+cmtsdb
+
+Name - meeting_rooms
+
+room_id - String
+booking_list {
+	start_time - Integer
+	end_time - Integer
+}
+
+db.meeting_rooms.insert([{"room_id":"1", "booking_list": [{"start_time": 1493388000, "end_time": 1493389800}, {"start_time": 1493398800, "end_time": 1493402400}]}, {"room_id":"2", "booking_list": [{"start_time": 1493388000, "end_time": 1493389800}, {"start_time": 1493398800, "end_time": 1493402400}]}])
+
+
+Name - user_schedules
+
+user_id - Integer
+meeting_list {
+	meeting_id - Integer
+	inviter_id - Integer
+	start_time - Integer
+	end_time - Integer
+}
+
+db.user_schedules.insert([{"user_id":10, "meeting_list": [{"meeting_id": 1, "inviter_id": 1, "start_time": 1493388000, "end_time": 1493389800}]}, {"user_id":11, "meeting_list": [{"meeting_id": 1, "inviter_id": 1, "start_time": 1493388000, "end_time": 1493389800}]}, {"user_id":12, "meeting_list": [{"meeting_id": 1, "inviter_id": 1, "start_time": 1493388000, "end_time": 1493389800}]}, {"user_id":21, "meeting_list": [{"meeting_id": 1, "inviter_id": 1, "start_time": 1493388000, "end_time": 1493389800}]}, {"user_id":22, "meeting_list": [{"meeting_id": 1, "inviter_id": 1, "start_time": 1493388000, "end_time": 1493389800}]}, {"user_id":13, "meeting_list": [{"meeting_id": 2, "inviter_id": 2, "start_time": 1493388000, "end_time": 1493389800}]}, {"user_id":14, "meeting_list": [{"meeting_id": 2, "inviter_id": 2, "start_time": 1493388000, "end_time": 1493389800}]}, {"user_id":23, "meeting_list": [{"meeting_id": 2, "inviter_id": 2, "start_time": 1493388000, "end_time": 1493389800}]}, {"user_id":15, "meeting_list": [{"meeting_id": 3, "inviter_id": 3, "start_time": 1493398800, "end_time": 1493402400}]}, {"user_id":16, "meeting_list": [{"meeting_id": 3, "inviter_id": 3, "start_time": 1493398800, "end_time": 1493402400}]}, {"user_id":17, "meeting_list": [{"meeting_id": 3, "inviter_id": 3, "start_time": 1493398800, "end_time": 1493402400}]}, {"user_id":24, "meeting_list": [{"meeting_id": 3, "inviter_id": 3, "start_time": 1493398800, "end_time": 1493402400}]}, {"user_id":18, "meeting_list": [{"meeting_id": 4, "inviter_id": 4, "start_time": 1493398800, "end_time": 1493402400}]}, {"user_id":19, "meeting_list": [{"meeting_id": 4, "inviter_id": 4, "start_time": 1493398800, "end_time": 1493402400}]}, {"user_id":25, "meeting_list": [{"meeting_id": 4, "inviter_id": 4, "start_time": 1493398800, "end_time": 1493402400}]}, {"user_id":26, "meeting_list": [{"meeting_id": 4, "inviter_id": 4, "start_time": 1493398800, "end_time": 1493402400}]}, {"user_id":27, "meeting_list": [{"meeting_id": 4, "inviter_id": 4, "start_time": 1493398800, "end_time": 1493402400}]}])
+
+
+Name - meeting_schedules
+
+_id - Integer
+inviter_id - Integer
+room_id - String
+start_time - Integer
+end_time - Integer
+priority_invitees - Array {user_id, ack_status, invite_status}
+secondary_invitees - Array {user_id, ack_status, invite_status}
+agenda - String
+
+db.meeting_schedules.insert([{"_id":1, "inviter_id":1, "room_id":1, "start_time":1493388000, "end_time":1493389800, "priority_invitees": [{"user_id":10, "ack_status": false, "invite_status": true}, {"user_id":11, "ack_status": false, "invite_status": true}, {"user_id":12, "ack_status": false, "invite_status": true}], "secondary_invitees": [{"user_id":21, "ack_status": false, "invite_status": true}, {"user_id":22, "ack_status": false, "invite_status": true}]}, {"_id":2, "inviter_id":2, "room_id":2, "start_time":1493388000, "end_time":1493389800, "priority_invitees": [{"user_id":13, "ack_status": false, "invite_status": true}, {"user_id":14, "ack_status": false, "invite_status": true}], "secondary_invitees": [{"user_id":23, "ack_status": false, "invite_status": true}]}, {"_id":3, "inviter_id":3, "room_id":1, "start_time":1493398800, "end_time":1493402400, "priority_invitees": [{"user_id":15, "ack_status": false, "invite_status": true}, {"user_id":16, "ack_status": false, "invite_status": true}, {"user_id":17, "ack_status": false, "invite_status": true}], "secondary_invitees": [{"user_id":24, "ack_status": false, "invite_status": true}]}, {"_id":4, "inviter_id":4, "room_id":2, "start_time":1493398800, "end_time":1493402400, "priority_invitees": [{"user_id":18, "ack_status": false, "invite_status": true}, {"user_id":19, "ack_status": false, "invite_status": true}], "secondary_invitees": [{"user_id":25, "ack_status": false, "invite_status": true}, {"user_id":26, "ack_status": false, "invite_status": true}, {"user_id":27, "ack_status": false, "invite_status": true}]}])
